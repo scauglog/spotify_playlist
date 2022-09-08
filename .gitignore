@@ -1,0 +1,4 @@
+*.csv
+.coverage
+__pycache__
+.vscode
