@@ -29,6 +29,8 @@ class Spotify:
         return {"Authorization": f"Bearer {self.access_token}"}
 
     def playlist_tracks(self, playlist_id):
+        print(f"{self.BASE_URL}/playlists/{playlist_id}/tracks")
+        print(self.auth_headers())
         r = requests.get(
             f"{self.BASE_URL}/playlists/{playlist_id}/tracks", headers=self.auth_headers()
         )

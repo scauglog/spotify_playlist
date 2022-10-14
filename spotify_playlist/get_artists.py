@@ -1,6 +1,6 @@
-from spotify_playlist.api.spotify import Spotify
-from spotify_playlist.datasets.tracks import Tracks
-from spotify_playlist.datasets.artists import Artists
+from api.spotify import Spotify
+from datasets.tracks import Tracks
+from datasets.artists import Artists
 import pandas as pd
 import datetime
 

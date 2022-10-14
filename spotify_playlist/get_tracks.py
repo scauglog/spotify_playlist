@@ -1,5 +1,5 @@
-from spotify_playlist.api.spotify import Spotify
-from spotify_playlist.datasets.tracks import Tracks
+from api.spotify import Spotify
+from datasets.tracks import Tracks
 import datetime
 
 def parse_tracks(extract_date, playlist_id, tracks, result):
@@ -19,11 +19,13 @@ def main(current_date = datetime.datetime.now().date()):
   spotify_client.authenticate()
 
   filename = "playlist.csv"
-  with open(filename) as f:
-    playlists = f.readlines()
-
+  with open(filename) as playlists:
     result = []
     for playlist_id in playlists:
+        playlist_id = playlist_id.rstrip("\n")
+        if playlist_id == "":
+          pass
+
         tracks = spotify_client.playlist_tracks(playlist_id)
         parse_tracks(current_date, playlist_id, tracks, result)
         Tracks.write(result, f"tracks_{current_date.isoformat()}.csv")

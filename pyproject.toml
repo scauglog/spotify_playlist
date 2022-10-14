@@ -5,7 +5,7 @@ description = ""
 authors = ["scauglog <4425250+scauglog@users.noreply.github.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "^3.9"
 pandas = "^1.4.4"
 requests = "2.28.1"
 
